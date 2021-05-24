@@ -1,0 +1,178 @@
+@mixin sp {
+  @media screen and(max-width:768px) {
+    @content;
+  }
+}
+
+$white: #fff;
+
+html {
+  font-size: 10px;
+  font-family: 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体',
+    'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif;
+  overflow: hidden;
+  height: 100%;
+  line-height: 1.4;
+}
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+#__nuxt {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  background: #e2f5ed;
+  padding: 0;
+  margin: 0 auto;
+  @include sp {
+    height: 100%;
+  }
+}
+body {
+  font-size: 10px;
+  height: 100%;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.header {
+  color: $white;
+  position: absolute;
+  width: 100%;
+  display: block;
+  text-align: center;
+  background: #42b984;
+  padding: 16px 0 80px;
+  z-index: 9;
+  &__title {
+    font-weight: bold;
+    font-size: 2.2rem;
+    @include sp {
+      font-size: 1.6rem;
+    }
+  }
+  &__description {
+    font-size: 1rem;
+  }
+  &__icon {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9;
+    width: 90px;
+  }
+}
+.main {
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 20vh 40px 30vh;
+  @include sp {
+    padding: 30vh 40px 26vh;
+  }
+}
+.message {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  &--self {
+    flex-flow: row-reverse;
+  }
+  &__matsuko {
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+  &__icon {
+    width: 80px;
+    min-width: 80px;
+    @include sp {
+      width: 60px;
+      min-width: 60px;
+    }
+  }
+  &__text {
+    position: relative;
+    background: $white;
+    border-radius: 8px;
+    margin-left: 16px;
+    padding: 32px;
+    font-size: 16px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-top: 16px solid transparent;
+      border-right: 16px solid $white;
+      border-bottom: 16px solid transparent;
+    }
+    &--self {
+      margin-left: 0;
+      margin-right: 16px;
+      &::before {
+        right: -5px;
+        left: inherit;
+        transform: rotate(65deg);
+      }
+    }
+  }
+}
+.submit {
+  width: 100%;
+  padding: 24px 40px;
+  display: flex;
+  background: #ccc;
+  justify-content: space-between;
+  &__text {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    font-size: 14px;
+    outline: none;
+    @include sp {
+      padding: 16px 24px;
+    }
+  }
+  &__button {
+    appearance: none;
+    border: none;
+    padding: 8px 48px;
+    white-space: nowrap;
+    color: #fff;
+    background: #42b984;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8px;
+    @include sp {
+      padding: 8px 16px;
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+.copy {
+  background: #ccc;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 0 16px;
+  @include sp {
+    display: none;
+  }
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
