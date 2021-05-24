@@ -15,9 +15,9 @@
         <dd class="message__text">えっ！質問！？なに！</dd>
       </dl>
       <div v-for="(data, index) in dataList" :key="index">
-        <Message :msg="data.message" />
+        <Message v-if="index >= 1" :msg="data.message" />
         <transition appear>
-          <div v-if="show">
+          <div v-if="show && index >= 1">
             <Matsuko :msg="data.message" />
           </div>
         </transition>
@@ -42,7 +42,7 @@ export default Vue.extend({
   data: function () {
     return {
       message: '',
-      dataList: [],
+      dataList: [{}],
       show: true,
     }
   },
