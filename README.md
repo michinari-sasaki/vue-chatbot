@@ -1,20 +1,17 @@
 # vue-chatbot
 
-## Build Setup
+## 概要
+VueとTypeScriptとNuxtの勉強のため
+マツコデラックスと会話できるチャットボットを
+作成しました。
 
-```bash
-# install dependencies
-$ npm install
+##公開URL  
+https://festive-khorana-7af813.netlify.app/
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## 実行
+npm install
+npm run dev
 
-# generate static project
-$ npm run generate
-```
+## 補足
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
